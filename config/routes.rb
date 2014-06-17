@@ -1,4 +1,36 @@
 PayrollApp::Application.routes.draw do
+
+  resources :salaries
+
+  resources :employees
+
+  root to: 'employees#index'
+
+
+  get "salaries/new"
+
+  get "salaries/create"
+
+  get "salaries/index"
+
+  get "salaries/show"
+
+  get "salaries/update"
+
+  get "salaries/destroy"
+
+  get "employees/new"
+
+  get "employees/create"
+
+  get "employees/index"
+
+  get "employees/show"
+
+  get "employees/update"
+
+  get "employees/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
