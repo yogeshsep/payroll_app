@@ -1,6 +1,8 @@
 PayrollApp::Application.routes.draw do
 
-  resources :salaries
+  resources :salaries do
+    get :autocomplete_employee_name, :on => :collection
+  end
 
   resources :employees
 

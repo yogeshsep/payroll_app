@@ -1,6 +1,13 @@
 
-<%= form_for @salary do |f| %>  
- 
+<%= form_for @salary do |f| %>
+
+<%= f.hidden_field :employee_id, :id => "real_employee_id" %>
+ <span class="help-block">Enter the Employee name</span> 
+<%= autocomplete_field_tag 'throwaway_employee', '',
+          autocomplete_employee_name_salaries_path,
+          :size => 75, :id_element => '#real_employee_id' %>
+  
+
 <% if @salary.errors.any? %>
 <h4>Couldn't provide salary</h4>
 <ul>

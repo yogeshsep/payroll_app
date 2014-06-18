@@ -1,4 +1,7 @@
 class SalariesController < ApplicationController
+
+  autocomplete :employee, :name, :display_value => :name, :full => true
+
   def new
     @salary = Salary.new
   end
@@ -24,6 +27,7 @@ class SalariesController < ApplicationController
 
   def show
     @salary = Salary.find(params[:id])
+    @employee =Employee.all
   end
 
   def update

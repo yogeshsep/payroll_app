@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140618045129) do
+ActiveRecord::Schema.define(:version => 20140618064430) do
 
   create_table "employees", :force => true do |t|
     t.string   "name"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20140618045129) do
     t.integer  "hra"
     t.integer  "ca"
     t.integer  "sa"
+    t.integer  "employee_id"
   end
 
 end

@@ -2,8 +2,9 @@
 <h2> Employee Details </h2>
 
 <div> 
-  <%= link_to "Create A New Employee", employees_new_path, class: "btn btn-primary" %> </div>
+  <%= link_to "Create A New Employee", employees_new_path, class: "btn btn-primary" %> <%= link_to "New Month Salary", salaries_new_path, class: "btn btn-primary" %></div>
 </br>
+
 
 <h6 class= "alert alert-info"><%= page_entries_info @employee %></h6>
 
