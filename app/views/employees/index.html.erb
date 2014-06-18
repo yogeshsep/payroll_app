@@ -1,2 +1,28 @@
-<h1>Employees#index</h1>
-<p>Find me in app/views/employees/index.html.erb</p>
+
+<h2> Employee Details </h2>
+
+<div> 
+  <%= link_to "Create A New Employee", employees_new_path, class: "btn btn-primary" %> </div>
+</br>
+
+<h6 class= "alert alert-info"><%= page_entries_info @employee %></h6>
+
+<table cellpadding = "5" cellspacing ="5" >
+  <tr>    
+    <th>Employee Name</th>    
+    <th>Designation</th> 
+    <th>Branch</th>     
+    <th>Employment Start Date</th>       
+  </tr>
+  <% @employee.each do |f| %>
+    <tr> 
+      <td><%= link_to f.name, employee_path(f) %></td>  
+      <td><%= f.designation %></td>
+      <td><%= f.branch %></td>
+      <td><%= f.employee_start_date.strftime("%d/%m/%Y") %></td>      
+      <% end %></td>         
+    </tr>  
+</table>
+<br/>
+
+<%= will_paginate @employee %>
