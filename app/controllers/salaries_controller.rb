@@ -3,7 +3,7 @@ class SalariesController < ApplicationController
   autocomplete :employee, :name, :display_value => :name, :full => true
 
   def new
-    @salary = Salary.new
+    @salary = Salary.new    
   end
 
   def create

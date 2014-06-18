@@ -1,7 +1,9 @@
 class Salary < ActiveRecord::Base
-  attr_accessible :basic, :da, :effective_from, :effective_to, :employeesalary, :hra, :ca, :sa, :employee_id
-
+  
   belongs_to :employee, :foreign_key => "employee_id"
+
+
+  attr_accessible :basic, :da, :effective_from, :effective_to, :employeesalary, :hra, :ca, :sa, :employee_id
 
 
 before_save :calculate_employeesalary

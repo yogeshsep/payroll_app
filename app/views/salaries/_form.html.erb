@@ -16,6 +16,10 @@
 <% end %>
 </ul>
 <% end %>
+
+    <%= f.label :effective_from %>
+    <%= f.date_select :effective_from, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
+    
     <%= f.label :Basic %>
     <%= f.text_field :basic, :placeholder =>'Basic' %>
 
@@ -30,9 +34,6 @@
     
     <%= f.label :SA %>
     <%= f.text_field :sa, :placeholder =>'SA' %>
-
-    <%= f.label :effective_from %>
-    <%= f.date_select :effective_from, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
       
  <div>
   </div>

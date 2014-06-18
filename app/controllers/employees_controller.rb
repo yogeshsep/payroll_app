@@ -1,13 +1,14 @@
 class EmployeesController < ApplicationController
   def new
     @employee = Employee.new
+    @salary = @employee.salaries.build
   end
 
   def create
    @employee = Employee.new(params[:employee])
     if @employee.save
       flash[:success] = "Created Employee Successfully!"
-      redirect_to employees_path
+      redirect_to employee_path(@employee)
     else
       flash[:error] = "Couldn't Create a Employee"  
       render  'new'
