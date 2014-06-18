@@ -1,2 +1,26 @@
-<h1>Salaries#index</h1>
-<p>Find me in app/views/salaries/index.html.erb</p>
+
+<h2> Employee Salary Details </h2>
+
+<div> 
+  <%= link_to "New Month Salary", salaries_new_path, class: "btn btn-primary" %> </div>
+</br>
+
+<h6 class= "alert alert-info"><%= page_entries_info @salary %></h6>
+
+<table cellpadding = "5" cellspacing ="5" >
+  <tr>    
+    <th>Employee Name</th>    
+    <th>Designation</th> 
+    <th>Net Pay</th>                
+  </tr>
+  <% @salary.each do |f| %>
+    <tr> 
+      <td><%=  %></td>  
+      <td><%=  %></td>
+      <td><%=  %></td>     
+      <% end %></td>         
+    </tr>  
+</table>
+<br/>
+
+<%= will_paginate @salary %>

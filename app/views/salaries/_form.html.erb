@@ -1,84 +1,35 @@
-<style>
-body{
-padding-top: 60px;
-background: url(/assets/money.jpg) no-repeat;
-background-position: center;
-background-size: 100%;
-}
-</style>
 
-<script type="text/javascript">
-function addit(){
-if(document.getElementById("fd_noy").value=="12Months")
-{
-document.getElementById("fd_roi").value="9.5%"
-}
-if(document.getElementById("fd_noy").value=="24Months")
-{
-document.getElementById("fd_roi").value="10%"
-}
-if(document.getElementById("fd_noy").value=="36Months")
-{
-document.getElementById("fd_roi").value="10.5%"
-}
-if(document.getElementById("fd_noy").value=="48Months")
-{
-document.getElementById("fd_roi").value="11%"
-}
-if(document.getElementById("fd_noy").value=="60Months")
-{
-document.getElementById("fd_roi").value="11.5%"
-}
-}
-</script>
-
-<%= form_for @fd do |f| %>  
+<%= form_for @salary do |f| %>  
  
-<% if @fd.errors.any? %>
-<h4>Couldn't open FD Account</h4>
+<% if @salary.errors.any? %>
+<h4>Couldn't provide salary</h4>
 <ul>
-<% @fd.errors.full_messages.each do |error| %>
+<% @salary.errors.full_messages.each do |error| %>
 <li><%= error %></li>
 <% end %>
 </ul>
 <% end %>
-    <%= f.label :customer_name %>
-    <%= f.text_field :cusna, :placeholder =>'Name' %>
+    <%= f.label :Basic %>
+    <%= f.text_field :basic, :placeholder =>'Basic' %>
 
-    <%= f.label :date_of_birth %>
-    <%= f.date_select :dob, { :include_blank => true, :start_year => 1900, :end_year => 2014 } %>
-   
-    <%= f.label :sex %>
-    <%= f.select :sex, options_for_select(%w[Male Female]), { :include_blank => true} %>
+    <%= f.label :DA %>
+    <%= f.text_field :da, :placeholder =>'DA' %>
 
-    <%= f.label :city %>
-    <%= f.text_field :city, :placeholder =>'City' %>   
+    <%= f.label :HRA %>
+    <%= f.text_field :hra, :placeholder =>'HRA' %>
 
-    <%= f.label :deposit_amount %>
-    <%= f.text_field :depamt, :placeholder =>'0.00' %>
-   
-    <%= f.label :opened_on %>
-    <%= f.text_field :openedon, :disabled => true, :value => Date.today.strftime("%d/%m/%Y") %>
+    <%= f.label :CA %>
+    <%= f.text_field :ca, :placeholder =>'CA' %>
+    
+    <%= f.label :SA %>
+    <%= f.text_field :sa, :placeholder =>'SA' %>
 
-    <div>
-    <%= f.label :Periods %>
-    <select  name="fd[noy]" id="fd_noy" onChange="addit()">
-    <option value="">Select Periods</option>
-    <option value="12Months">12Months</option>
-    <option value="24Months">24Months</option>
-    <option value="36Months">36Months</option>
-    <option value="48Months">48Months</option>
-    <option value="60Months">60Months</option>
-    </select>
-  </div>
-  <div>
-    <%= f.label :Rate_Of_Interest %>
-    <input type="text" name="fd[roi]" id="fd_roi" value="" readonly="readonly" onChange="addit()">
-    <span class="help-block">auto-generated</span>
-  </div>
+    <%= f.label :effective_from %>
+    <%= f.date_select :effective_from, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
       
+ <div>
   </div>
-    <%= f.submit "Open FD", class: "btn btn-primary" %>     
+    <%= f.submit "Confirm Salary", class: "btn btn-primary" %>     
     <% end %>
   </div>
 </div>

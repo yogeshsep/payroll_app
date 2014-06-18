@@ -1,2 +1,59 @@
-<h1>Salaries#show</h1>
-<p>Find me in app/views/salaries/show.html.erb</p>
+<h1><%= link_to "Salaries", salaries_path %></h1>
+<br />
+<div class="hero-unit">
+<h5><strong>Employee Name</strong> : <%=  %></h5>
+<h5><strong>Address</strong> : <%=  %></h5>
+
+<hr>
+   
+<div class="row">
+   <div class="span6 customer_left_span_properties">
+   <h4><span class="customer">Employee Salary Details</span></h4>
+   <div class="row">
+   <div class="span3">
+   <strong>BASIC</strong>
+   </div>
+   <div class="span3"> : <%= @salary.basic %></div>
+   </div>
+   
+   <div class="row">
+   <div class="span3">
+   <strong>DA</strong>
+   </div>
+   <div class="span3"> : <%= @salary.da %> </div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>HRA</strong>
+   </div>
+   <div class="span3"> : <%= @salary.hra %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>CA</strong>
+   </div>
+   <div class="span3"> : <%= @salary.ca %> </div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>SA</strong>
+   </div>
+   <div class="span3"> : <%= @salary.sa %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Salary Effective From </strong>
+   </div>
+   <div class="span3"> : <%= @salary.effective_from %></div>
+   </div>
+  
+   </div>
+   </div>
+   </div>
+</hr>
+</div>
+</div>

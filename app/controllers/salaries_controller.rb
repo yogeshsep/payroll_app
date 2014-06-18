@@ -7,7 +7,7 @@ class SalariesController < ApplicationController
    @salary = Salary.new(params[:salary])
     if @salary.save
       flash[:success] = "Created a new month salary!"
-      redirect_to salarys_path
+      redirect_to salaries_path
     else
       flash[:error] = "Couldn't Create salary"  
       render  'new'
@@ -30,7 +30,7 @@ class SalariesController < ApplicationController
     @salary = Salary.find(params[:id])
       if @salary.update_attributes(params[:salary])
         flash[:success] = "Updated Employee Salary Details"
-        redirect_to salarys_path(@salary)
+        redirect_to salaries_path(@salary)
       else
         flash[:alert] ="Fill the necessary fields"
         render 'edit'
@@ -41,6 +41,6 @@ class SalariesController < ApplicationController
     @salary = Salary.find(params[:id])
     @salary.destroy
     flash[:notice] = "Salary Details of a Employee Get Deleted"
-    redirect_to salarys_path
+    redirect_to salaries_path
   end
 end

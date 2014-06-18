@@ -8,14 +8,4 @@ validates_inclusion_of :effective_from,
 
   validates :basic, presence: true
 
-  validates :da, presence: true
-  
-  validates :hra, presence: true  
-
-  validates :ca, presence: true
-
-  validates :sa, presence: true    
-
-  validates :employeesalary, presence: true
-
 end
