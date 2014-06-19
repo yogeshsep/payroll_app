@@ -1,17 +1,13 @@
 class Salary < ActiveRecord::Base
   
-  belongs_to :employee, :foreign_key => "employee_id"
-
+  belongs_to :employee
 
   attr_accessible :basic, :da, :effective_from, :effective_to, :employeesalary, :hra, :ca, :sa, :employee_id
-
-
 
 before_save :calculate_effective_to
   def calculate_effective_to
     self.effective_to = self.effective_from + 1.year
   end
-
 
 before_save :calculate_employeesalary
   def calculate_employeesalary

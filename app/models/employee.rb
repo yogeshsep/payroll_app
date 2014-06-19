@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
   
-has_many :salaries, :foreign_key => "employee_id"
+has_many :salaries
 
   attr_accessible :address, :age, :branch, :city, :date_of_birth, :designation, :employee_end_date, :employee_start_date, :gender, :name
 
