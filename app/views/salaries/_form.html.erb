@@ -1,11 +1,11 @@
 
-<%= form_for @salary do |f| %>
+<%= form_for @salary, url: { action: "create" } do |f| %>
 
 <%= f.hidden_field :employee_id, :id => "real_employee_id" %>
  <span class="help-block">Enter the Employee name</span> 
-<%= autocomplete_field_tag 'throwaway_employee', '',
-          autocomplete_employee_name_salaries_path,
-          :size => 75, :id_element => '#real_employee_id' %>
+<%= autocomplete_field 'throwaway_employee', '',
+autocomplete_employee_name_salaries_path,
+:size => 75, :id_element => '#real_employee_id' %>
   
 
 <% if @salary.errors.any? %>
@@ -21,19 +21,19 @@
     <%= f.date_select :effective_from, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
     
     <%= f.label :Basic %>
-    <%= f.text_field :basic, :placeholder =>'Basic' %>
+    <%= f.text_field :basic, :placeholder =>'Basic', :class => 'input-medium' %>
 
     <%= f.label :DA %>
-    <%= f.text_field :da, :placeholder =>'DA' %>
+    <%= f.text_field :da, :placeholder =>'DA', :class => 'input-medium' %>
 
     <%= f.label :HRA %>
-    <%= f.text_field :hra, :placeholder =>'HRA' %>
+    <%= f.text_field :hra, :placeholder =>'HRA', :class => 'input-medium' %>
 
     <%= f.label :CA %>
-    <%= f.text_field :ca, :placeholder =>'CA' %>
+    <%= f.text_field :ca, :placeholder =>'CA', :class => 'input-medium' %>
     
     <%= f.label :SA %>
-    <%= f.text_field :sa, :placeholder =>'SA' %>
+    <%= f.text_field :sa, :placeholder =>'SA', :class => 'input-medium' %>
       
  <div>
   </div>
