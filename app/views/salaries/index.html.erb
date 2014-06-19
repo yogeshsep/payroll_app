@@ -11,12 +11,12 @@
   <tr>    
     <th>Employee Name</th>    
     <th>Designation</th> 
-    <th>Net Pay</th>                
+    <th>Gross Pay</th>                
   </tr>
   <% @salary.each do |f| %>
     <tr> 
-      <td><%=   %></td>  
-      <td><%=  %></td>
+      <td><%= link_to '#{@salary.employee.name}'  %></td>  
+      <td><%= @salary.employee.designation %></td>
       <td><%= f.employeesalary %></td>     
       <% end %></td>         
     </tr>  

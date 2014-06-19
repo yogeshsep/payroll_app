@@ -48,7 +48,14 @@
    <div class="span3">   
    <strong>Salary Effective From </strong>
    </div>
-   <div class="span3"> : <%= @salary.effective_from %></div>
+   <div class="span3"> : <%= @salary.effective_from.strftime("%d/%m/%Y") %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Salary Effective To </strong>
+   </div>
+   <div class="span3"> : <%= @salary.effective_to.strftime("%d/%m/%Y") %></div>
    </div>
   
    </div>
