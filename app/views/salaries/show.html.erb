@@ -1,8 +1,9 @@
 <h1><%= link_to "Salaries", salaries_path %></h1>
 <br />
 <div class="hero-unit">
-<h5><strong>Employee Name</strong> : <%=  %></h5>
-<h5><strong>Address</strong> : <%=  %></h5>
+<h5><strong>Employee Name</strong> : <%= "#{@salary.employee.name}" %></h5>
+<h5><strong>Address</strong> : <%= "#{@salary.employee.address}" %>
+   <%= "#{@salary.employee.city}" %></h5>
 
 <hr>
    

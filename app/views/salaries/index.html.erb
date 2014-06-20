@@ -15,8 +15,8 @@
   </tr>
   <% @salary.each do |f| %>
     <tr> 
-      <td><%= link_to '#{@salary.employee.name}'  %></td>  
-      <td><%= @salary.employee.designation %></td>
+      <td><%= link_to "#{f.employee.name}", salary_path(f)  %></td>  
+      <td><%= f.employee.designation %></td>
       <td><%= f.employeesalary %></td>     
       <% end %></td>         
     </tr>  

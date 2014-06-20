@@ -20,4 +20,6 @@ validates_inclusion_of :effective_from,
 
   validates :basic, presence: true
 
+  validates :employee_id, presence: true
+
 end

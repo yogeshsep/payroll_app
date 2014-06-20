@@ -13,14 +13,18 @@
     <th>Employee Name</th>    
     <th>Designation</th> 
     <th>Branch</th>     
-    <th>Employment Start Date</th>       
+    <th>Employment Start Date</th> 
+    <th>Salary Details</th>      
   </tr>
   <% @employee.each do |f| %>
     <tr> 
       <td><%= link_to f.name, employee_path(f) %></td>  
       <td><%= f.designation %></td>
       <td><%= f.branch %></td>
-      <td><%= f.employee_start_date.strftime("%d/%m/%Y") %></td>      
+      <td><%= f.employee_start_date.strftime("%d/%m/%Y") %></td>
+      <td><%=  link_to(salaries_path(@salary), class: "btn btn-small btn-primary") do %>
+           Salary details <% end %> </td>
+
       <% end %></td>         
     </tr>  
 </table>

@@ -1,6 +1,6 @@
 class SalariesController < ApplicationController
 
-  autocomplete :employee, :name, :display_value => :name, :full => true
+  autocomplete :employee, :name, :display_value => :name, :full => true, :order => 'created_at DESC'
 
   def new
     @salary = Salary.new    
