@@ -1,5 +1,5 @@
 class AddSaToSalaries < ActiveRecord::Migration
   def change
-    add_column :salaries, :sa, :integer
+    add_money :salaries, :sa
   end
 end

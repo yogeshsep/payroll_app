@@ -16,16 +16,8 @@ before_save :calculate_age
       :in => Date.civil(1900, 1, 1)..Date.today,
       :message => "Must be between 1900 and now"   
 
-  validates :gender, presence: true
+  validates :gender, :address, :city, :designation, :branch, :employee_start_date, presence: true
 
-  validates :address, presence: true
+  validates_uniqueness_of :name
   
-  validates :city, presence: true  
-
-  validates :designation, presence: true
-
-  validates :branch, presence: true    
-
-  validates :employee_start_date, presence: true
-
 end

@@ -1,11 +1,11 @@
 class CreateSalaries < ActiveRecord::Migration
   def change
     create_table :salaries do |t|
-      t.integer :employeesalary
+      t.money :employeesalary
+      t.money :basic
+      t.money :da
       t.date :effective_from
       t.date :effective_to
-      t.integer :basic
-      t.integer :da
 
       t.timestamps
     end

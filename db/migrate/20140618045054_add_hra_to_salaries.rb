@@ -1,5 +1,5 @@
-class AddHraToSalaries < ActiveRecord::Migration
+class AddHraToSalaries < ActiveRecord::Migration 
   def change
-    add_column :salaries, :hra, :integer
+    add_money :salaries, :hra
   end
 end

@@ -29,16 +29,22 @@ ActiveRecord::Schema.define(:version => 20140618064430) do
   end
 
   create_table "salaries", :force => true do |t|
-    t.integer  "employeesalary"
+    t.integer  "employeesalary_paisas",   :default => 0,     :null => false
+    t.string   "employeesalary_currency", :default => "INR", :null => false
+    t.integer  "basic_paisas",            :default => 0,     :null => false
+    t.string   "basic_currency",          :default => "INR", :null => false
+    t.integer  "da_paisas",               :default => 0,     :null => false
+    t.string   "da_currency",             :default => "INR", :null => false
     t.date     "effective_from"
     t.date     "effective_to"
-    t.integer  "basic"
-    t.integer  "da"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "hra"
-    t.integer  "ca"
-    t.integer  "sa"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.integer  "hra_paisas",              :default => 0,     :null => false
+    t.string   "hra_currency",            :default => "INR", :null => false
+    t.integer  "ca_paisas",               :default => 0,     :null => false
+    t.string   "ca_currency",             :default => "INR", :null => false
+    t.integer  "sa_paisas",               :default => 0,     :null => false
+    t.string   "sa_currency",             :default => "INR", :null => false
     t.integer  "employee_id"
   end
 
