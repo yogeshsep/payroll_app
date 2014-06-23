@@ -51,7 +51,7 @@ MoneyRails.configure do |config|
      :priority            => 1,
      :iso_code            => "INR",
      :name                => "INR with paise of 3 digits",
-     :symbol              => "€",
+     :symbol              => "₹",
      :symbol_first        => true,
      :subunit             => "paise",
      :subunit_to_unit     => 100,
