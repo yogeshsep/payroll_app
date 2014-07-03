@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140703053230) do
+ActiveRecord::Schema.define(:version => 20140703070231) do
 
   create_table "employees", :force => true do |t|
     t.string   "name"
@@ -31,23 +31,25 @@ ActiveRecord::Schema.define(:version => 20140703053230) do
   end
 
   create_table "salaries", :force => true do |t|
-    t.integer  "employeesalary_paisas",   :default => 0,     :null => false
-    t.string   "employeesalary_currency", :default => "INR", :null => false
-    t.integer  "basic_paisas",            :default => 0,     :null => false
-    t.string   "basic_currency",          :default => "INR", :null => false
-    t.integer  "da_paisas",               :default => 0,     :null => false
-    t.string   "da_currency",             :default => "INR", :null => false
+    t.integer  "employeesalary_paisas",         :default => 0,     :null => false
+    t.string   "employeesalary_currency",       :default => "INR", :null => false
+    t.integer  "basic_paisas",                  :default => 0,     :null => false
+    t.string   "basic_currency",                :default => "INR", :null => false
+    t.integer  "da_paisas",                     :default => 0,     :null => false
+    t.string   "da_currency",                   :default => "INR", :null => false
     t.date     "effective_from"
     t.date     "effective_to"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
-    t.integer  "hra_paisas",              :default => 0,     :null => false
-    t.string   "hra_currency",            :default => "INR", :null => false
-    t.integer  "ca_paisas",               :default => 0,     :null => false
-    t.string   "ca_currency",             :default => "INR", :null => false
-    t.integer  "sa_paisas",               :default => 0,     :null => false
-    t.string   "sa_currency",             :default => "INR", :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+    t.integer  "hra_paisas",                    :default => 0,     :null => false
+    t.string   "hra_currency",                  :default => "INR", :null => false
+    t.integer  "ca_paisas",                     :default => 0,     :null => false
+    t.string   "ca_currency",                   :default => "INR", :null => false
+    t.integer  "sa_paisas",                     :default => 0,     :null => false
+    t.string   "sa_currency",                   :default => "INR", :null => false
     t.integer  "employee_id"
+    t.integer  "experience_allowance_paisas",   :default => 0,     :null => false
+    t.string   "experience_allowance_currency", :default => "INR", :null => false
   end
 
 end
