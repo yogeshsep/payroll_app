@@ -1,13 +1,40 @@
 PayrollApp::Application.routes.draw do
 
   resources :salaries do
-    get :autocomplete_employee_name, :on => :collection
+    get :autocomplete_employee_employee_code, :on => :collection
   end
 
   resources :employees
 
+  resources :attendances
+
+  resources :deductions
+
   root to: 'employees#index'
 
+  get "attendances/new"
+
+  get "attendances/create"
+
+  get "attendances/index"
+
+  get "attendances/show"
+
+  get "attendances/update"
+
+  get "attendances/destroy"
+
+  get "deductions/new"
+
+  get "deductions/create"
+
+  get "deductions/index"
+
+  get "deductions/show"
+
+  get "deductions/update"
+
+  get "deductions/destroy"
 
   get "salaries/new"
 

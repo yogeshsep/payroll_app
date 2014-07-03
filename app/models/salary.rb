@@ -4,9 +4,17 @@ class Salary < ActiveRecord::Base
 
   monetize :basic_paisas, :da_paisas, :employeesalary_paisas, :hra_paisas, :ca_paisas, :sa_paisas, :experience_allowance_paisas
   
+  has_many :attendances
+
+  accepts_nested_attributes_for :attendances
+
+  has_many :deductions
+
+  accepts_nested_attributes_for :deductions
+
   belongs_to :employee
 
-  attr_accessible :basic_paisas, :da_paisas, :employeesalary_paisas, :hra_paisas, :ca_paisas, :sa_paisas, :effective_from, :effective_to, :employee_id, :experience_allowance_paisas
+  attr_accessible :basic_paisas, :da_paisas, :employeesalary_paisas, :hra_paisas, :ca_paisas, :sa_paisas, :effective_from, :effective_to, :employee_id, :experience_allowance_paisas, :attendances_attributes, :deductions_attributes
 
 before_save :calculate_effective_to
   def calculate_effective_to

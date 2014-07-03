@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140703070231) do
+ActiveRecord::Schema.define(:version => 20140703115639) do
+
+  create_table "attendances", :force => true do |t|
+    t.integer  "OD"
+    t.integer  "EL"
+    t.integer  "CL"
+    t.integer  "SL"
+    t.integer  "LOP"
+    t.integer  "Working_Days"
+    t.integer  "Attend_Days"
+    t.integer  "OTHER"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "salary_id"
+  end
+
+  create_table "deductions", :force => true do |t|
+    t.integer  "PF"
+    t.integer  "ESI"
+    t.integer  "TE"
+    t.integer  "SHARE"
+    t.integer  "OTHER"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "salary_id"
+  end
 
   create_table "employees", :force => true do |t|
     t.string   "name"

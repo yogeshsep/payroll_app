@@ -4,10 +4,10 @@
 
 <%= f.hidden_field :employee_id, :id => "real_employee_id" %>
 
- <span class="help-block">Enter the Employee name</span> 
+ <span class="help-block">Enter the Employee Code</span> 
  
 <%= autocomplete_field_tag 'throwaway_employee', '',
-autocomplete_employee_name_salaries_path,
+autocomplete_employee_employee_code_salaries_path,
 :size => 75, :id_element => '#real_employee_id' %>
   
 
@@ -20,26 +20,111 @@ autocomplete_employee_name_salaries_path,
 </ul>
 <% end %>
 
-    <%= f.label :effective_from %>
-    <%= f.date_select :effective_from, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
-    
-    <%= f.label :Basic %>₹
-    <%= f.text_field :basic_paisas, :placeholder =>'Basic', :class => 'input-medium' %>
+<%= f.label :effective_from %>
+<%= f.date_select :effective_from, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
 
-    <%= f.label :DA %>₹
-    <%= f.text_field :da_paisas, :placeholder =>'DA', :class => 'input-medium' %>
+<div class='row'>
+<div class='span6'>
+<div class="string input optional stringish control-group" id="salary_basic_paisas_input">
+<%= f.label :Basic %><div class="controls">₹
+<%= f.text_field :basic_paisas, :placeholder =>'Basic', :class => 'input-medium' %>
+</div></div>
+</div>
 
-    <%= f.label :HRA %>₹
-    <%= f.text_field :hra_paisas, :placeholder =>'HRA', :class => 'input-medium' %>
+<div class='span6'>
+<div class="string input optional stringish control-group" id="salary_da_paisas_input">
+<%= f.label :DA %><div class="controls">₹
+<%= f.text_field :da_paisas, :placeholder =>'DA', :class => 'input-medium' %>
+</div></div>
+</div>
 
-    <%= f.label :CA %>₹
-    <%= f.text_field :ca_paisas, :placeholder =>'CA', :class => 'input-medium' %>
-    
-    <%= f.label :SA %>₹
-    <%= f.text_field :sa_paisas, :placeholder =>'SA', :class => 'input-medium' %>
+<div class='span6'>
+<div class="string input optional stringish control-group" id="salary_hra_paisas_input">
+<%= f.label :HRA %><div class="controls">₹
+<%= f.text_field :hra_paisas, :placeholder =>'HRA', :class => 'input-medium' %>
+</div></div>
+</div>
 
-    <%= f.label :Experience_allowance %>₹
-    <%= f.text_field :experience_allowance_paisas, :placeholder =>'EA', :class => 'input-medium' %>
+<div class='span6'>
+<div class="string input optional stringish control-group" id="salary_ca_paisas_input">
+<%= f.label :CA %><div class="controls">₹
+<%= f.text_field :ca_paisas, :placeholder =>'DA', :class => 'input-medium' %>
+</div></div>
+</div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group" id="salary_sa_paisas_input">
+<%= f.label :SA %><div class="controls">₹
+<%= f.text_field :sa_paisas, :placeholder =>'DA', :class => 'input-medium' %>
+</div></div>
+</div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group" id="salary_experience_allowance_paisas_input">
+<%= f.label :EA %><div class="controls">₹
+<%= f.text_field :experience_allowance_paisas, :placeholder =>'Experience Allowance', :class => 'input-medium' %>
+</div></div>
+</div>
+
+<%= f.fields_for :attendances do |at| %>
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= at.label :OD %>
+  <%= at.text_field :OD, :placeholder =>'OD', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= at.label :EL %>
+  <%= at.text_field :EL, :placeholder =>'EL', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= at.label :CL %>
+  <%= at.text_field :CL, :placeholder =>'CL', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= at.label :SL %>
+  <%= at.text_field :SL, :placeholder =>'SL', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= at.label :Working_Days %>
+  <%= at.text_field :Working_Days, :disabled => true, :class => 'input-medium' %>
+  <span class="help-block">auto-updation</span>
+</div></div>  
+<% end %>
+
+
+<%= f.fields_for :deductions do |dt| %>
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= dt.label :PF %>
+  <%= dt.text_field :PF, :placeholder =>'PF', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= dt.label :ESI %>
+  <%= dt.text_field :ESI, :placeholder =>'ESI', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= dt.label :TE %>
+  <%= dt.text_field :TE, :placeholder =>'TELEPHONE EXPENSES', :class => 'input-medium' %>
+</div></div>
+
+<div class='span6'>
+<div class="string input optional stringish control-group">
+  <%= dt.label :SHARE %>
+  <%= dt.text_field :SHARE, :class => 'input-medium' %>  
+</div></div>  
+<% end %>
       
  <div>
   </div>

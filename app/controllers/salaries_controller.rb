@@ -1,9 +1,11 @@
 class SalariesController < ApplicationController
 
-  autocomplete :employee, :name, :display_value => :name, :full => true, :order => 'created_at DESC'
+  autocomplete :employee, :employee_code, :display_value => :employee_code, :full => true, :order => 'created_at DESC'
 
   def new
-    @salary = Salary.new    
+    @salary = Salary.new
+    @attendance =@salary.attendances.build   
+    @deduction =@salary.deductions.build
   end
 
   def create

@@ -1,0 +1,31 @@
+
+<h2> Employee Attendance Details </h2>
+
+<div> 
+  <%= link_to "New Month Salary", salaries_new_path, class: "btn btn-primary" %> </div>
+</br>
+
+<table cellpadding = "5" cellspacing ="5" >
+  <tr>    
+    <th>OD</th>
+    <th>EL</th>    
+    <th>CL</th> 
+    <th>SL</th>
+    <th>LOP</th>
+    <th>WORKING DAYS</th>
+    <th>ATTEND DAYS</th>                
+  </tr>
+  <% @attendance.each do |f| %>
+    <tr> 
+      <td><%= f.OD %></td>
+      <td><%= f.EL %></td>  
+      <td><%= f.CL %></td>
+      <td><%= f.SL %></td>
+      <td><%= f.LOP %></td>      
+      <td><%= f.Working_Days %></td>
+      <td><%= f.Attend_Days %></td>
+      <% end %></td>         
+    </tr>  
+</table>
+<br/>
+
