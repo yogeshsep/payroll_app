@@ -9,12 +9,14 @@
 
 <table cellpadding = "5" cellspacing ="5" >
   <tr>    
+    <th>Employee Code</th>
     <th>Employee Name</th>    
     <th>Designation</th> 
     <th>Gross Pay</th>                
   </tr>
   <% @salary.each do |f| %>
     <tr> 
+      <td><%= link_to "#{f.employee.employee_code}", salary_path(f)  %></td>
       <td><%= link_to "#{f.employee.name}", salary_path(f)  %></td>  
       <td><%= f.employee.designation %></td>
       <td>₹<%= f.employeesalary_paisas %></td>     

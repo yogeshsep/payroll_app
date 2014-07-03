@@ -9,16 +9,20 @@
 <h6 class= "alert alert-info"><%= page_entries_info @employee %></h6>
 
 <table cellpadding = "5" cellspacing ="5" >
-  <tr>    
-    <th>Employee Name</th>    
+  <tr>
+    <th>Employee Code</th> 
+    <th>Employee Name</th> 
+    <th>Category</th>    
     <th>Designation</th> 
     <th>Branch</th>     
-    <th>Employment Start Date</th> 
+    <th>Joined Date</th> 
     <th>Salary Details</th>      
   </tr>
   <% @employee.each do |f| %>
     <tr> 
-      <td><%= link_to f.name, employee_path(f) %></td>  
+      <td><%= link_to f.employee_code, employee_path(f) %></td> 
+      <td><%= f.name %></td> 
+      <td><%= f.employee_category %></td> 
       <td><%= f.designation %></td>
       <td><%= f.branch %></td>
       <td><%= f.employee_start_date.strftime("%d/%m/%Y") %></td>

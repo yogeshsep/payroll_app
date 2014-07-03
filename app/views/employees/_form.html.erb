@@ -9,6 +9,11 @@
 <% end %>
 </ul>
 <% end %>
+
+    <%= f.label :employee_code %>
+    <%= f.text_field :employee_code, :disabled => true %>
+    <span class="help-block">auto-generated</span>
+
     <%= f.label :employee_name %>
     <%= f.text_field :name, :placeholder =>'Employee Name' %>
 
@@ -24,13 +29,16 @@
     <%= f.label :city %>
     <%= f.text_field :city, :placeholder =>'City' %>   
 
+    <%= f.label :employee_category %>
+    <%= f.select :employee_category, options_for_select(%w[Permanent Contractual Trainee]), { :include_blank => true} %>
+
     <%= f.label :designation %>
     <%= f.text_field :designation, :placeholder =>'0.00' %>
    
     <%= f.label :branch %>
     <%= f.text_field :branch, :placeholder =>'Branch' %>
 
-    <%= f.label :employee_start_date %>
+    <%= f.label :employee_joined_date %>
     <%= f.date_select :employee_start_date, { :include_blank => true, :start_year => 1993, :end_year => 2014 } %>
   <div>    
   </div>

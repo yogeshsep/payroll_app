@@ -55,8 +55,8 @@ MoneyRails.configure do |config|
      :symbol_first        => true,
      :subunit             => "paise",
      :subunit_to_unit     => 100,
-     :thousands_separator => ".",
-     :decimal_mark        => ","
+     :thousands_separator => ",",
+     :decimal_mark        => "."
    }
 
   # Set money formatted ouuutput globally.
