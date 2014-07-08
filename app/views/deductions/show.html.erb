@@ -1,2 +1,54 @@
-<h1>Deductions#show</h1>
-<p>Find me in app/views/deductions/show.html.erb</p>
+<h1><%= link_to "Employees", employees_path %></h1>
+<br />
+
+<div class="hero-unit">
+<h4><span class="customer">Employee Salary Details</span></h4>
+<h5><strong>Gross Pay</strong> : <%= link_to "#{@deduction.salary.employeesalary_paisas}", salaries_path %></h5>
+
+<hr>
+   
+<div class="row">
+   <div class="span6 customer_left_span_properties">
+   <h4><span class="customer">Employee Salary Deduction Details</span></h4>
+
+   <div class="row">
+   <div class="span3">
+   <strong>PF</strong>
+   </div>
+   <div class="span3"> : <%= currency_symbol %><%= @deduction.PF %></div>
+   </div>
+   
+   <div class="row">
+   <div class="span3">
+   <strong>ESI</strong>
+   </div>
+   <div class="span3"> : <%= currency_symbol %><%= @deduction.ESI %> </div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>TE</strong>
+   </div>
+   <div class="span3"> : <%= currency_symbol %><%= @deduction.TE %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>SHARE</strong>
+   </div>
+   <div class="span3"> : <%= currency_symbol %><%= @deduction.SHARE %> </div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>OTHER</strong>
+   </div>
+   <div class="span3"> : <%= currency_symbol %><%= @deduction.OTHER %></div>
+   </div>
+  
+   </div>
+   </div>
+   </div>
+</hr>
+</div>
+</div>

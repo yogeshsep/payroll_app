@@ -15,7 +15,7 @@ class DeductionsController < ApplicationController
   end
 
   def index
-    @deduction = Deduction.all
+    @deduction = Deduction.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

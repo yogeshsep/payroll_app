@@ -1,2 +1,26 @@
-<h1>Deductions#index</h1>
-<p>Find me in app/views/deductions/index.html.erb</p>
+
+<h2> Salary Deduction Details for a Employee</h2>
+
+<div> 
+  <%= link_to "Salary Details", salaries_path, class: "btn btn-primary" %> </div>
+</br>
+
+<h6 class= "alert alert-info"><%= page_entries_info @deduction %></h6>
+
+<table cellpadding = "5" cellspacing ="5" >
+  <tr>    
+    <th>Gross Pay</th> 
+    <th>Deduction Details</th>
+
+  </tr>
+  <% @deduction.each do |f| %>
+    <tr> 
+      <td><%= currency_symbol %><%= f.salary.employeesalary_paisas %></td>     
+      <% end %></td>    
+      <td><%=  link_to(deduction_path(@deduction), class: "btn btn-small btn-primary") do %>
+           Deduction Details <% end %> </td>     
+    </tr>  
+</table>
+<br/>
+
+<%= will_paginate @deduction %>

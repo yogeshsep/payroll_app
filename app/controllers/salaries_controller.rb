@@ -4,8 +4,8 @@ class SalariesController < ApplicationController
 
   def new
     @salary = Salary.new
-    @attendance =@salary.attendances.build   
-    @deduction =@salary.deductions.build
+    @attendance = @salary.attendances.build   
+    @deduction = @salary.deductions.build   
   end
 
   def create

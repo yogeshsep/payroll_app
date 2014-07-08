@@ -19,7 +19,7 @@
       <td><%= link_to "#{f.employee.employee_code}", salary_path(f)  %></td>
       <td><%= link_to "#{f.employee.name}", salary_path(f)  %></td>  
       <td><%= f.employee.designation %></td>
-      <td>₹<%= f.employeesalary_paisas %></td>     
+      <td><%= currency_symbol %><%= f.employeesalary_paisas %></td>     
       <% end %></td>         
     </tr>  
 </table>

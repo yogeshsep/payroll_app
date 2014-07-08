@@ -5,6 +5,7 @@
 <h4><span class="customer">Employee Personal Details</span></h4>
 <h5><strong>Employee Code</strong> : <%= link_to "#{@salary.employee.employee_code}", employees_path %></h5>
 <h5><strong>Employee Name</strong> : <%= "#{@salary.employee.name}" %></h5>
+<h5><strong>Branch</strong> : <%= "#{@salary.employee.branch}" %></h5>
 
 <hr>
    
@@ -16,42 +17,42 @@
    <div class="span3">
    <strong>BASIC</strong>
    </div>
-   <div class="span3"> : ₹<%= @salary.basic_paisas %></div>
+   <div class="span3"> : <%= currency_symbol %><%= @salary.basic_paisas %></div>
    </div>
    
    <div class="row">
    <div class="span3">
    <strong>DA</strong>
    </div>
-   <div class="span3"> : ₹<%= @salary.da_paisas %> </div>
+   <div class="span3"> : <%= currency_symbol %><%= @salary.da_paisas %> </div>
    </div>
 
    <div class="row">
    <div class="span3">
    <strong>HRA</strong>
    </div>
-   <div class="span3"> : ₹<%= @salary.hra_paisas %></div>
+   <div class="span3"> : <%= currency_symbol %><%= @salary.hra_paisas %></div>
    </div>
 
    <div class="row">
    <div class="span3">   
    <strong>CA</strong>
    </div>
-   <div class="span3"> : ₹<%= @salary.ca_paisas %> </div>
+   <div class="span3"> : <%= currency_symbol %><%= @salary.ca_paisas %> </div>
    </div>
 
    <div class="row">
    <div class="span3">
    <strong>SA</strong>
    </div>
-   <div class="span3"> : ₹<%= @salary.sa_paisas %></div>
+   <div class="span3"> : <%= currency_symbol %><%= @salary.sa_paisas %></div>
    </div>
 
    <div class="row">
    <div class="span3">
    <strong>Experience Allowances</strong>
    </div>
-   <div class="span3"> : ₹<%= @salary.experience_allowance_paisas %></div>
+   <div class="span3"> : <%= currency_symbol %><%= @salary.experience_allowance_paisas %></div>
    </div>
 
    <div class="row">
@@ -66,6 +67,14 @@
    <strong>Salary Effective To </strong>
    </div>
    <div class="span3"> : <%= @salary.effective_to.strftime("%d/%m/%Y") %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>Deduction Details</strong>
+   </div>
+   <div class="span3"> : <%=  link_to(deductions_path(@deduction), class: "btn btn-small btn-primary") do %>
+           Salary Deduction Details <% end %> </div>
    </div>
   
    </div>
