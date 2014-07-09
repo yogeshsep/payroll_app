@@ -9,4 +9,9 @@ class Attendance < ActiveRecord::Base
     self.Working_Days = 26
   end
 
+  before_save :set_Attend_Days
+  def set_Attend_Days
+    self.Attend_Days = self.Working_Days - self.EL - self.CL - self.SL - self.OD
+  end  
+
 end
