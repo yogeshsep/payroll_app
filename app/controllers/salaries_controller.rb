@@ -11,6 +11,7 @@ class SalariesController < ApplicationController
   def create
    @salary = Salary.new(params[:salary])
     if @salary.save
+      flash[:salary_id] = @salary.id      
       flash[:success] = "Created a new month salary!"
       redirect_to salaries_path
     else

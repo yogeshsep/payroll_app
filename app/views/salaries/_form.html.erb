@@ -1,5 +1,5 @@
 
-<%= form_for @salary do |f| %>
+<%= form_for @salary, :html => {:multipart => true} do |f| %>
 
 
 <%= f.hidden_field :employee_id, :id => "real_employee_id" %>

@@ -7,7 +7,7 @@ class EmployeesController < ApplicationController
   def create
    @employee = Employee.new(params[:employee])
     if @employee.save
-      flash[:success] = "Created Employee Successfully!"
+      flash[:success] = "Welcome!"
       redirect_to employee_path(@employee)
     else
       flash[:error] = "Couldn't Create a Employee"  
