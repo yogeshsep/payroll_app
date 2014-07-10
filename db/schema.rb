@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140703115639) do
+ActiveRecord::Schema.define(:version => 20140710121907) do
 
   create_table "attendances", :force => true do |t|
     t.integer  "OD"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20140703115639) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "salary_id"
+    t.integer  "TOTAL_LEAVE"
   end
 
   create_table "deductions", :force => true do |t|
