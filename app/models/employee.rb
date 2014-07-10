@@ -1,6 +1,9 @@
 class Employee < ActiveRecord::Base
   
 has_many :salaries
+
+has_many :attendances, :through => :salaries
+
 has_many :deductions, :through => :salaries
 
 attr_accessible :address, :age, :branch, :city, :date_of_birth, :designation, :employee_end_date, :employee_start_date, :gender, :name, :employee_category, :employee_code
