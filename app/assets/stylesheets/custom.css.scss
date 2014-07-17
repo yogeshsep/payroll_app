@@ -88,6 +88,14 @@ h1,h2,h3,h4,h5
 
 /* table */
 
+table tr.oddrow {
+    background-color: #f3f7f5;
+}
+
+table tr.evenrow {
+    background-color: #fffbf0;
+}
+
 th
 {
   background-color:Peru ;

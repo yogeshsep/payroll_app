@@ -21,4 +21,15 @@ class Attendance < ActiveRecord::Base
     self.Attend_Days = self.Working_Days - self.EL - self.CL - self.SL
   end  
 
+  before_save :calculate_LOP
+  def calculate_LOP
+    if employee.employee_category == "PERMANENT" && self.TOTAL_LEAVE > 3
+      self.LOP = (salary.employeesalary_paisas / 30)
+    elsif employee.employee_category == "CONTRACTUAL" && self.TOTAL_LEAVE > 2
+      self.LOP = (salary.employeesalary_paisas / 30)
+    else
+      self.LOP = (salary.employeesalary_paisas / 30)
+    end
+  end
+
 end

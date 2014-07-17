@@ -14,7 +14,7 @@
 
   </tr>
   <% @deduction.each do |f| %>
-    <tr> 
+    <tr class="<%= cycle('oddrow', 'evenrow') -%>"> 
       <td><%= currency_symbol %><%= f.salary.employeesalary_paisas %></td>     
       <% end %></td>    
       <td><%=  link_to(deduction_path(@deduction), class: "btn btn-small btn-primary") do %>

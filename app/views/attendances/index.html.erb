@@ -16,7 +16,7 @@
     <th>ATTEND DAYS</th>                
   </tr>
   <% @attendance.each do |f| %>
-    <tr> 
+    <tr class="<%= cycle('oddrow', 'evenrow') -%>"> 
       <td><%= f.OD %></td>
       <td><%= f.EL %></td>  
       <td><%= f.CL %></td>

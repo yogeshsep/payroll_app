@@ -1,3 +1,4 @@
+
 class SalariesController < ApplicationController
 
   autocomplete :employee, :employee_code, :display_value => :employee_code, :full => true, :order => 'created_at DESC'

@@ -19,7 +19,7 @@
     <th>Salary Details</th>      
   </tr>
   <% @employee.each do |f| %>
-    <tr> 
+    <tr class="<%= cycle('oddrow', 'evenrow') -%>"> 
       <td><%= link_to f.employee_code, employee_path(f) %></td> 
       <td><%= f.name %></td> 
       <td><%= f.employee_category %></td> 
